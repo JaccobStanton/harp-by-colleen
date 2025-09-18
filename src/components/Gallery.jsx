@@ -22,8 +22,6 @@ import GALLERY8 from "../assets/gallery/gallery8.webp";
 
 import LeafImg from "../assets/leaf.png";
 
-const CORAL = "#e08b74";
-
 export default function Gallery({
   eyebrow = "Gallery",
   title = "Moments That Sing",
@@ -40,11 +38,14 @@ export default function Gallery({
   ],
 }) {
   // Reveal-on-scroll
-  const rootRef = React.useRef(null);
   const [reveal, setReveal] = React.useState(false);
 
+  // 1) add a ref
+  const sentinelRef = React.useRef(null);
+
+  // 2) observe the sentinel instead of the whole section
   React.useEffect(() => {
-    if (!rootRef.current) return;
+    if (!sentinelRef.current) return;
     const io = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
@@ -52,9 +53,12 @@ export default function Gallery({
           io.disconnect();
         }
       },
-      { threshold: 0.25, rootMargin: "0px 0px -15% 0px" }
+      {
+        threshold: 0, // any pixel visible
+        rootMargin: "0px 0px -10% 0px", // start a bit before it hits center
+      }
     );
-    io.observe(rootRef.current);
+    io.observe(sentinelRef.current);
     return () => io.disconnect();
   }, []);
 
@@ -86,9 +90,10 @@ export default function Gallery({
 
   return (
     <Box
-      ref={rootRef}
+      ref={sentinelRef}
       component="section"
       sx={{
+        position: "relative",
         bgcolor: "background.default",
         color: "text.primary",
         py: { xs: 10, md: 14 },
