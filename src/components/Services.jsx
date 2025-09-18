@@ -36,8 +36,8 @@ export default function Services({
     },
   ],
 }) {
-  // reveal-on-scroll like Gallery
-
+  // reveal-on-scroll
+  const [reveal, setReveal] = React.useState(false);
   // 1) add a ref
   const sentinelRefServices = React.useRef(null);
 
