@@ -7,6 +7,7 @@ import Services from "./components/Services";
 import About from "./components/About";
 import Gallery from "./components/Gallery";
 import Reviews from "./components/Reviews";
+import Contact from "./components/Contact";
 
 import LOGO from "./assets/Logo.png";
 import HERO1 from "./assets/hero/hero1.webp";
@@ -31,10 +32,12 @@ function App() {
         ]}
       />
       <QutoeHero />
-      <Services />
       <About />
+      <Services />
+
       <Gallery />
       <Reviews />
+      <Contact />
     </>
   );
 }
