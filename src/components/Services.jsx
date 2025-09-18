@@ -5,11 +5,13 @@ import { Box, Container, Typography } from "@mui/material";
 import SERVICE1 from "../assets/services/service1.webp";
 import SERVICE2 from "../assets/services/service2.webp";
 import SERVICE3 from "../assets/services/service3.webp";
+import LeafImg from "../assets/leaf.png";
 
 const CORAL = "#e08b74";
 const SHADOW = "0 18px 20px -8px rgba(224,139,116,0.45)"; // #e08b74 @ 45%
 
 export default function Services({
+  eyebrow = "Services",
   items = [
     {
       src: SERVICE1,
@@ -34,36 +36,111 @@ export default function Services({
     },
   ],
 }) {
+  // reveal-on-scroll like Gallery
+  const rootRef = React.useRef(null);
+  const [reveal, setReveal] = React.useState(false);
+
+  React.useEffect(() => {
+    if (!rootRef.current) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setReveal(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.25, rootMargin: "0px 0px -15% 0px" }
+    );
+    io.observe(rootRef.current);
+    return () => io.disconnect();
+  }, []);
+
+  const FADE_MS = 1200;
+  const MOVE_MS = 800;
+  const STAGGER_MS = 900;
+  const fadeStyle = (d = 0) => ({
+    opacity: reveal ? 1 : 0,
+    transform: reveal ? "none" : "translateY(10px)",
+    transition: `opacity ${FADE_MS}ms ease-out ${
+      reveal ? d : 0
+    }ms, transform ${MOVE_MS}ms ease-out ${reveal ? d : 0}ms`,
+    "@media (prefers-reduced-motion: reduce)": {
+      transition: "none",
+      transform: "none",
+      opacity: 1,
+    },
+  });
+
   return (
     <Box
+      ref={rootRef}
       component="section"
       sx={{
         bgcolor: "background.default",
         color: "text.primary",
         py: { xs: 8, md: 12 },
-        overflowX: "clip", // belt-and-suspenders: no stray horizontal scroll
+        overflowX: "clip",
       }}
     >
-      {/* Full-width container from your theme (maxWidth=false by default). */}
       <Container
         disableGutters
         sx={{
-          px: { xs: 2, sm: 3, md: 4, lg: 6 }, // site gutters
+          px: { xs: 2, sm: 3, md: 4, lg: 6 },
           width: "100%",
         }}
       >
-        {/* CSS Grid -> no negative margins, no overflow; 1 col on xs, 3 cols from md up */}
+        {/* Header (leaf + overline “Services”) */}
+        <Box
+          sx={{
+            maxWidth: 1100,
+            mx: "auto",
+            textAlign: "center",
+            mb: { xs: 4, md: 6 },
+          }}
+        >
+          <Box
+            component="img"
+            src={LeafImg}
+            alt=""
+            aria-hidden
+            draggable={false}
+            sx={{
+              width: { xs: 40, sm: 52 },
+              height: "auto",
+              mb: 1,
+              mx: "auto",
+              display: "block",
+              ...fadeStyle(0),
+            }}
+          />
+          <Typography
+            variant="overline"
+            sx={{
+              color: "rgb(160,164,142)",
+              letterSpacing: ".24em",
+              fontSize: { xs: 12, sm: 13, md: 14 },
+              textTransform: "uppercase",
+              display: "block",
+              ...fadeStyle(0),
+            }}
+          >
+            {eyebrow}
+          </Typography>
+        </Box>
+
+        {/* Grid */}
         <Box
           sx={{
             display: "grid",
             gridTemplateColumns: { xs: "1fr", md: "repeat(3, minmax(0, 1fr))" },
-            gap: { xs: 4, md: 6 }, // uses theme.spacing under the hood
+            gap: { xs: 4, md: 6 },
             alignItems: "start",
+            ...fadeStyle(STAGGER_MS), // grid fades after the header
           }}
         >
           {items.map((item, i) => (
             <Box key={i}>
-              {/* Image wrapper: equal sizes via aspect-ratio; hover coral shadow */}
+              {/* Image */}
               <Box
                 sx={{
                   position: "relative",

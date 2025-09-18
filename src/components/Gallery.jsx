@@ -25,7 +25,7 @@ import LeafImg from "../assets/leaf.png";
 const CORAL = "#e08b74";
 
 export default function Gallery({
-  eyebrow = "Galleries",
+  eyebrow = "Gallery",
   title = "Moments That Sing",
   blurb = `A collection of images where touch meets tone. See Colleen coax color from every string.`,
   items = [
