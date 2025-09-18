@@ -88,6 +88,8 @@ export default function Contact({
 
               minHeight: PANEL_MIN_H,
               height: "100%",
+              minWidth: 0, // ⬅ allow shrinking inside the grid
+              width: "100%", // ⬅ fill the grid track width
 
               display: "flex",
               alignItems: "center",
@@ -203,6 +205,9 @@ export default function Contact({
               minHeight: PANEL_MIN_H,
               aspectRatio: { xs: "4 / 5", md: "auto" },
               height: "100%",
+              minWidth: 0, // ⬅ allow shrinking inside the grid
+              width: "100%",
+              boxSizing: "border-box",
 
               borderTopRightRadius: "var(--radius)",
               borderBottomRightRadius: "var(--radius)",
