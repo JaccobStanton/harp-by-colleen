@@ -160,6 +160,7 @@ export default function Navbar({ logoSrc }) {
       sx={{
         backgroundColor: "background.default",
         borderBottom: "1px solid",
+        borderRadius: 0,
         borderColor: "divider",
       }}
     >
