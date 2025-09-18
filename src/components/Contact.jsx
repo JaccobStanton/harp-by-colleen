@@ -78,8 +78,7 @@ export default function Contact({
               bgcolor: "background.paper",
               border: "1px solid",
               borderColor: "divider",
-              // remove the inner seam on md+
-              borderRight: { xs: "1px solid", md: "none" },
+              borderRight: "none",
               // outer corners rounded (left), inner corners square (right)
               borderTopLeftRadius: "var(--radius)",
               borderBottomLeftRadius: "var(--radius)",
