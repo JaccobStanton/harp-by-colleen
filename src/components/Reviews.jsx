@@ -277,7 +277,7 @@ export default function Reviews({
               color: "#555749",
               maxWidth: 980,
               mx: "auto",
-              fontSize: { xs: 16, sm: 17, md: 18 },
+              fontSize: { xs: 14.5, sm: 15.5, md: 16 },
               lineHeight: 1.9,
               px: { xs: 0.5, sm: 1 },
               ...fadeStyle(STAGGER_MS * 4),
