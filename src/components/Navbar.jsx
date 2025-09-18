@@ -134,7 +134,7 @@ export default function Navbar({ logoSrc }) {
   const left = [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
-    { label: "Portfolio", href: "/portfolio" },
+    { label: "Services", href: "/services" },
     // {
     //   label: "Pages",
     //   href: "/pages",
@@ -147,7 +147,7 @@ export default function Navbar({ logoSrc }) {
   ];
 
   const right = [
-    { label: "Services", href: "/services" },
+    { label: "Gallery", href: "/gallery" },
     { label: "Testimonials", href: "/testimonials" },
     { label: "Contact", href: "/contact" },
   ];
