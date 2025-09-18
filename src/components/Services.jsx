@@ -37,11 +37,13 @@ export default function Services({
   ],
 }) {
   // reveal-on-scroll like Gallery
-  const rootRef = React.useRef(null);
-  const [reveal, setReveal] = React.useState(false);
 
+  // 1) add a ref
+  const sentinelRefServices = React.useRef(null);
+
+  // 2) observe the sentinel instead of the whole section
   React.useEffect(() => {
-    if (!rootRef.current) return;
+    if (!sentinelRefServices.current) return;
     const io = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
@@ -49,9 +51,12 @@ export default function Services({
           io.disconnect();
         }
       },
-      { threshold: 0.25, rootMargin: "0px 0px -15% 0px" }
+      {
+        threshold: 0, // any pixel visible
+        rootMargin: "0px 0px -10% 0px", // start a bit before it hits center
+      }
     );
-    io.observe(rootRef.current);
+    io.observe(sentinelRefServices.current);
     return () => io.disconnect();
   }, []);
 
@@ -73,7 +78,7 @@ export default function Services({
 
   return (
     <Box
-      ref={rootRef}
+      ref={sentinelRefServices}
       component="section"
       sx={{
         bgcolor: "background.default",
