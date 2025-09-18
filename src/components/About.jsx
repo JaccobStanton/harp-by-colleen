@@ -83,6 +83,9 @@ export default function About({
               minHeight: PANEL_MIN_H,
               aspectRatio: { xs: "4 / 5", md: "auto" },
               height: "100%",
+              minWidth: 0, // ⬅ allow shrinking
+              width: "100%", // ⬅ fill track
+              boxSizing: "border-box", // ⬅ include 1px border in width calc
               borderTopLeftRadius: "var(--radius)",
               borderBottomLeftRadius: "var(--radius)",
               borderTopRightRadius: { xs: "var(--radius)", md: 0 },
@@ -121,6 +124,8 @@ export default function About({
 
               minHeight: PANEL_MIN_H,
               height: "100%",
+              minWidth: 0, // ⬅ allow shrinking inside the grid
+              width: "100%", // ⬅ fill the grid track width
 
               // Center everything
               display: "flex",
