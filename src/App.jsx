@@ -6,6 +6,7 @@ import QutoeHero from "./components/QuoteHero";
 import Services from "./components/Services";
 import About from "./components/About";
 import Gallery from "./components/Gallery";
+import Portfolio from "./components/Portfolio";
 import Reviews from "./components/Reviews";
 import Contact from "./components/Contact";
 
@@ -36,6 +37,7 @@ function App() {
       <Services />
 
       <Gallery />
+      <Portfolio />
       <Reviews />
       <Contact />
     </>
