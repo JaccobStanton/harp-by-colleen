@@ -1,6 +1,9 @@
 import React from "react";
-import "./App.css";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
+// your existing sections:
 import Hero from "./components/Hero";
 import QutoeHero from "./components/QuoteHero";
 import Services from "./components/Services";
@@ -10,38 +13,53 @@ import Portfolio from "./components/Portfolio";
 import Reviews from "./components/Reviews";
 import Contact from "./components/Contact";
 
+import AboutMe from "./components/AboutMe/AboutMe";
 import LOGO from "./assets/Logo.png";
-import HERO1 from "./assets/hero/hero1.webp";
-import HERO2 from "./assets/hero/hero2.webp";
-import HERO3 from "./assets/hero/hero3.webp";
 
-function App() {
+function ScrollManager() {
+  const { pathname, hash } = useLocation();
+
+  React.useEffect(() => {
+    if (hash) {
+      const id = hash.slice(1);
+      // wait one frame so the page has rendered
+      requestAnimationFrame(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "auto", block: "start" }); // no smooth
+      });
+    } else {
+      window.scrollTo({ top: 0, behavior: "auto" }); // always start at top on new page
+    }
+  }, [pathname, hash]);
+
+  return null;
+}
+
+function HomePage() {
   return (
     <>
-      <Navbar logoSrc={LOGO} />
-      <Hero
-        images={[
-          {
-            src: HERO1,
-            alt: "Backside view of Colleen playing Harp",
-          },
-          { src: HERO2, alt: "Still of Colleen with her harp" },
-          {
-            src: HERO3,
-            alt: "Second still of Colleen with her harp",
-          },
-        ]}
-      />
+      <Hero />
       <QutoeHero />
-      <About />
-      <Services />
-
-      <Gallery />
-      <Portfolio />
-      <Reviews />
-      <Contact />
+      <About id="about" />
+      <Services id="services" />
+      <Gallery id="gallery" />
+      <Portfolio id="portfolio" />
+      <Reviews id="reviews" />
+      <Contact id="contact" />
+      <Footer />
     </>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <>
+      <Navbar logoSrc={LOGO} />
+      <ScrollManager />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/aboutme" element={<AboutMe />} />
+      </Routes>
+    </>
+  );
+}

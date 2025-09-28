@@ -70,6 +70,7 @@ const REVIEWS_DEFAULT = [
 ];
 
 export default function Reviews({
+  id = "testimonials",
   eyebrow = "Testimonials",
   title = "What My Clients Say",
   items = REVIEWS_DEFAULT,
@@ -138,6 +139,7 @@ export default function Reviews({
 
   return (
     <Box
+      id={id}
       ref={rootRef}
       component="section"
       sx={{
@@ -220,6 +222,7 @@ export default function Reviews({
             display: "grid",
             alignItems: "center",
             justifyItems: "center",
+            boxShadow: "0 18px 20px -8px rgba(0,0,0,0.15)",
             gap: 2,
             ...fadeStyle(STAGGER_MS * 2), // card appears after title
           }}

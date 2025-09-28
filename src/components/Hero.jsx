@@ -1,8 +1,22 @@
 import * as React from "react";
 import { Box, Paper, Stack, Typography, Button } from "@mui/material";
+import HERO1 from "../assets/hero/hero1.webp";
+import HERO2 from "../assets/hero/hero2.webp";
+import HERO3 from "../assets/hero/hero3.webp";
 
 export default function Hero({
-  images = [],
+  id = "top",
+  images = [
+    {
+      src: HERO1,
+      alt: "Backside view of Colleen playing Harp",
+    },
+    { src: HERO2, alt: "Still of Colleen with her harp" },
+    {
+      src: HERO3,
+      alt: "Second still of Colleen with her harp",
+    },
+  ],
   overlay = {
     eyebrow: "Experience Elegence",
     title: "Playing Weddings & Events",
@@ -13,11 +27,13 @@ export default function Hero({
 }) {
   return (
     <Box
+      id={id}
       component="section"
       sx={{
         display: "block",
         backgroundColor: "background.default",
         py: { xs: 2, sm: 3, md: 4, lg: 6 },
+        scrollMarginTop: { xs: "80px", md: "80px" },
       }}
     >
       <Box

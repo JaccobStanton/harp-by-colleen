@@ -16,7 +16,10 @@ export default function Footer({
       label: "Harp Guide",
       href: "https://www.harp-school.com/guides/choose-your-harp/?srsltid=AfmBOorZxFhpT89bpieh8h_3X2FTNR5kn9x9OYFIIXRAVmuKS1PqQZix",
     },
-    { label: "Changelog", href: "#" },
+    {
+      label: "Venues",
+      href: "https://www.theknot.com/marketplace/wedding-reception-venues-st-louis-mo/affordable?utm_source=google&utm_medium=cpc&utm_campaign=MARKETPLACE_EVERGREEN&utm_content=performance_cpc_search-ad_pmax_venue&gad_source=1&gad_campaignid=22997580416&gbraid=0AAAAADiu8TnFBMnyhDRDl9VAbOdEWYPey&gclid=CjwKCAjwlt7GBhAvEiwAKal0csXlbJLRb-nySf37LEOFYHeMrNCaHKbRtgtW2xIwIsZAcrpnPDVffBoCwO8QAvD_BwE",
+    },
   ],
   poweredBy = "Powered by Vite + React",
   madeBy = "Made by Jake Stanton",

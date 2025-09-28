@@ -222,7 +222,7 @@ export default function Portfolio({
                     // simple “artwork” background; swap for real cover if you have one
                     background:
                       "radial-gradient(120% 140% at 20% 10%, #f5e8e3 0%, #efe7db 42%, #e9e0d2 100%)",
-                    boxShadow: "0 0 0 rgba(0,0,0,0)",
+                    boxShadow: "0 18px 20px -8px rgba(0,0,0,0.15)",
                     transition: "box-shadow 240ms ease, transform 120ms ease",
                     "&:hover": { boxShadow: SHADOW },
                     "&:active": { transform: "scale(0.997)" },

@@ -1,5 +1,6 @@
 // src/components/About.jsx
 import * as React from "react";
+import { Link as RouterLink } from "react-router-dom";
 import { Box, Container, Paper, Typography, Button } from "@mui/material";
 import ABOUT from "../assets/about/about.webp";
 import LeafSrc from "../assets/leaf.png";
@@ -8,11 +9,12 @@ const CORAL = "#e08b74";
 const PANEL_MIN_H = { xs: 500, sm: 600, md: 760, lg: 840, xl: 900 }; // taller at all breakpoints
 
 export default function About({
+  id = "about",
   image = { src: ABOUT, alt: "Smiling bride holding flowers" },
   eyebrow = "Who I am",
   title = "Classical Roots, Contemporary Reach",
   copy = `Colleen is the principal harpist for the St. Louis Philharmonic and has performed with a wide array of esteemed ensembles including the St. Louis Symphony, Union Avenue Opera, Winter Opera, the St. Louis Bach Society, Metropolitan Orchestra of St. Louis, among many others. A versatile and in-demand performer, she has brought her artistry to over 100 wedding ceremonies and events`,
-  cta = { label: "More about me", href: "/about" },
+  cta = { label: "More about me", href: "#aboutme" },
   leafSrc = LeafSrc,
 }) {
   // Reveal-on-scroll (same behavior as your QuoteHero)
@@ -53,8 +55,10 @@ export default function About({
 
   return (
     <Box
+      id={id}
       ref={rootRef}
-      component="section"
+      component={RouterLink}
+      to="/aboutme"
       sx={{
         bgcolor: "background.default",
         color: "text.primary",
@@ -70,6 +74,8 @@ export default function About({
             gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
             gap: { xs: 4, md: 0 }, // touch on md+
             alignItems: "stretch",
+            boxShadow: "0 18px 20px -8px rgba(0,0,0,0.15)",
+            borderRadius: "var(--radius)",
           }}
         >
           {/* Left image (outer corners rounded, inner corners square) */}
@@ -202,7 +208,7 @@ export default function About({
               </Typography>
 
               <Button
-                href={cta.href}
+                to="/aboutme"
                 variant="outlined"
                 size="large"
                 sx={{

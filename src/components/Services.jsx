@@ -11,6 +11,7 @@ const CORAL = "#e08b74";
 const SHADOW = "0 18px 20px -8px rgba(224,139,116,0.45)"; // #e08b74 @ 45%
 
 export default function Services({
+  id = "services",
   eyebrow = "Services",
   items = [
     {
@@ -78,6 +79,7 @@ export default function Services({
 
   return (
     <Box
+      id={id}
       ref={sentinelRefServices}
       component="section"
       sx={{
@@ -153,7 +155,7 @@ export default function Services({
                   borderRadius: "var(--radius)",
                   overflow: "hidden",
                   bgcolor: "grey.100",
-                  boxShadow: "0 0 0 rgba(0,0,0,0)",
+                  boxShadow: "0 18px 20px -8px rgba(0,0,0,0.15)",
                   transition: "box-shadow 260ms ease",
                   "&:hover": { boxShadow: SHADOW },
                   "&:focus-visible": {

@@ -21,13 +21,14 @@ import {
 } from "@mui/material";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
-
+import { Link as RouterLink } from "react-router-dom";
 const NAV_HEIGHT = 72;
 
 function Brand({ logoSrc, href = "/" }) {
   return (
     <MUILink
-      href={href}
+      component={RouterLink}
+      to={href}
       underline="none"
       sx={{
         display: "inline-flex",
@@ -62,12 +63,7 @@ function Brand({ logoSrc, href = "/" }) {
   );
 }
 
-function NavLinkButton({
-  label,
-  href = "#",
-  withMenu = false,
-  menuItems = [],
-}) {
+function NavLinkButton({ label, to = "#", withMenu = false, menuItems = [] }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
@@ -84,7 +80,13 @@ function NavLinkButton({
 
   if (!withMenu) {
     return (
-      <Button href={href} variant="text" disableRipple sx={baseSx}>
+      <Button
+        component={RouterLink}
+        to={to}
+        variant="text"
+        disableRipple
+        sx={baseSx}
+      >
         {label}
       </Button>
     );
@@ -114,8 +116,9 @@ function NavLinkButton({
           <MenuItem
             key={mi.label}
             onClick={() => setAnchorEl(null)}
-            component="a"
             href={mi.href}
+            component={RouterLink}
+            to={to}
           >
             {mi.label}
           </MenuItem>
@@ -132,9 +135,9 @@ export default function Navbar({ logoSrc }) {
 
   // Left and right groups (your requested order)
   const left = [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    { label: "Services", href: "/services" },
+    { label: "Home", to: "/" },
+    { label: "About", to: "/#about" },
+    { label: "Services", to: "/#services" },
     // {
     //   label: "Pages",
     //   href: "/pages",
@@ -147,9 +150,9 @@ export default function Navbar({ logoSrc }) {
   ];
 
   const right = [
-    { label: "Gallery", href: "/gallery" },
-    { label: "Testimonials", href: "/testimonials" },
-    { label: "Contact", href: "/contact" },
+    { label: "Gallery", to: "/#gallery" },
+    { label: "Testimonials", to: "/#reviews" }, // or whatever your id is
+    { label: "Contact", to: "/#contact" },
   ];
 
   return (
@@ -257,8 +260,9 @@ export default function Navbar({ logoSrc }) {
             {left.map((i) => (
               <ListItem key={`m-${i.label}`} disablePadding>
                 <ListItemButton
-                  component="a"
                   href={i.href}
+                  component={RouterLink}
+                  to={i.to}
                   onClick={() => setOpen(false)}
                   sx={{
                     px: 2,

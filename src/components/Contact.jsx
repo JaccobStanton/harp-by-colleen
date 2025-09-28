@@ -8,6 +8,7 @@ const CORAL = "#e08b74";
 const PANEL_MIN_H = { xs: 500, sm: 600, md: 760, lg: 840, xl: 900 };
 
 export default function Contact({
+  id = "contact",
   image = { src: CONTACT, alt: "Smiling bride holding flowers" },
   eyebrow = "Contact",
   title = "The Sound of Elegance Awaits",
@@ -52,6 +53,7 @@ export default function Contact({
 
   return (
     <Box
+      id={id}
       ref={rootRef}
       component="section"
       sx={{
@@ -69,6 +71,8 @@ export default function Contact({
             gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
             gap: { xs: 4, md: 0 }, // touch on md+
             alignItems: "stretch",
+            boxShadow: "0 18px 20px -8px rgba(0,0,0,0.15)",
+            borderRadius: "var(--radius)",
           }}
         >
           {/* LEFT: content panel (centered) */}

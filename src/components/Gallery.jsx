@@ -23,6 +23,7 @@ import GALLERY8 from "../assets/gallery/gallery8.webp";
 import LeafImg from "../assets/leaf.png";
 
 export default function Gallery({
+  id = "gallery",
   eyebrow = "Gallery",
   title = "Moments That Sing",
   blurb = `A collection of images where touch meets tone. See Colleen coax color from every string.`,
@@ -90,6 +91,7 @@ export default function Gallery({
 
   return (
     <Box
+      id={id}
       ref={sentinelRef}
       component="section"
       sx={{
@@ -188,7 +190,7 @@ export default function Gallery({
                 bgcolor: "grey.100",
                 aspectRatio: "4 / 3", // same size tiles
                 cursor: "zoom-in",
-                boxShadow: "0 0 0 rgba(0,0,0,0)",
+                boxShadow: "0 18px 20px -8px rgba(0,0,0,0.15)",
                 transition: "box-shadow 240ms ease, transform 120ms ease",
                 "&:hover": {
                   boxShadow: "0 18px 40px -8px rgba(224,139,116,0.45)",
