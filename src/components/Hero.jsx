@@ -132,7 +132,8 @@ export default function Hero({
                 sx={{
                   color: "rgb(160, 164, 142)",
                   letterSpacing: ".24em",
-                  fontSize: { xs: 12, sm: 13, md: 14, lg: 15 },
+                  fontSize: { xs: 10, sm: 13, md: 14, lg: 15 },
+                  whiteSpace: "nowrap",
                 }}
               >
                 {overlay.eyebrow}
@@ -148,7 +149,7 @@ export default function Hero({
                   fontWeight: 400,
                   letterSpacing: "-0.02em",
                   lineHeight: 1.05,
-                  fontSize: { xs: 28, sm: 36, md: 48, lg: 56, xl: 64 },
+                  fontSize: { xs: 25, sm: 36, md: 48, lg: 56, xl: 64 },
                 }}
               >
                 {overlay.title}
@@ -164,7 +165,7 @@ export default function Hero({
                   letterSpacing: ".18em",
                   px: { xs: 2, sm: 2.5, md: 3 },
                   py: { xs: 1, sm: 1.25 },
-                  fontSize: { xs: 12, sm: 13, md: 14 },
+                  fontSize: { xs: 10, sm: 13, md: 14 },
 
                   color: "#555749",
                   borderRadius: 0,
