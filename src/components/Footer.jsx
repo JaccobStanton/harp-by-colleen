@@ -147,7 +147,7 @@ export default function Footer({
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                alignItems: "flex-start",
+                alignItems: "center",
                 gap: 1.25,
               }}
             >
@@ -192,7 +192,7 @@ export default function Footer({
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                alignItems: { xs: "flex-start", md: "center" }, // <— centered stack
+                alignItems: { xs: "center", md: "center" }, // <— centered stack
                 gap: 1.25,
               }}
             >
