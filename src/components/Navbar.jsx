@@ -151,7 +151,7 @@ export default function Navbar({ logoSrc }) {
 
   const right = [
     { label: "Gallery", to: "/#gallery" },
-    { label: "Testimonials", to: "/#reviews" }, // or whatever your id is
+    { label: "Testimonials", to: "/#reviews" },
     { label: "Contact", to: "/#contact" },
   ];
 
@@ -301,8 +301,9 @@ export default function Navbar({ logoSrc }) {
             {right.map((i) => (
               <ListItem key={`m-${i.label}`} disablePadding>
                 <ListItemButton
-                  component="a"
                   href={i.href}
+                  component={RouterLink}
+                  to={i.to}
                   onClick={() => setOpen(false)}
                   sx={{
                     px: 2,
