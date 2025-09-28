@@ -74,8 +74,6 @@ export default function About({
             gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
             gap: { xs: 4, md: 0 }, // touch on md+
             alignItems: "stretch",
-            boxShadow: "0 18px 20px -8px rgba(0,0,0,0.15)",
-            borderRadius: "var(--radius)",
           }}
         >
           {/* Left image (outer corners rounded, inner corners square) */}
@@ -96,6 +94,8 @@ export default function About({
               borderBottomLeftRadius: "var(--radius)",
               borderTopRightRadius: { xs: "var(--radius)", md: 0 },
               borderBottomRightRadius: { xs: "var(--radius)", md: 0 },
+              boxShadow: "0 18px 20px -8px rgba(0,0,0,0.15)",
+              borderRadius: "var(--radius)",
             }}
           >
             <Box
@@ -127,6 +127,9 @@ export default function About({
               borderBottomRightRadius: "var(--radius)",
               borderTopLeftRadius: { xs: "var(--radius)", md: 0 },
               borderBottomLeftRadius: { xs: "var(--radius)", md: 0 },
+
+              boxShadow: "0 18px 20px -8px rgba(0,0,0,0.15)",
+              borderRadius: "var(--radius)",
 
               minHeight: PANEL_MIN_H,
               height: "100%",

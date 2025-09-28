@@ -71,8 +71,6 @@ export default function Contact({
             gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
             gap: { xs: 4, md: 0 }, // touch on md+
             alignItems: "stretch",
-            boxShadow: "0 18px 20px -8px rgba(0,0,0,0.15)",
-            borderRadius: "var(--radius)",
           }}
         >
           {/* LEFT: content panel (centered) */}
@@ -88,6 +86,9 @@ export default function Contact({
               borderBottomLeftRadius: "var(--radius)",
               borderTopRightRadius: { xs: "var(--radius)", md: 0 },
               borderBottomRightRadius: { xs: "var(--radius)", md: 0 },
+
+              boxShadow: "0 18px 20px -8px rgba(0,0,0,0.15)",
+              borderRadius: "var(--radius)",
 
               minHeight: PANEL_MIN_H,
               height: "100%",
@@ -211,6 +212,9 @@ export default function Contact({
               minWidth: 0, // ⬅ allow shrinking inside the grid
               width: "100%",
               boxSizing: "border-box",
+
+              boxShadow: "0 18px 20px -8px rgba(0,0,0,0.15)",
+              borderRadius: "var(--radius)",
 
               borderTopRightRadius: "var(--radius)",
               borderBottomRightRadius: "var(--radius)",

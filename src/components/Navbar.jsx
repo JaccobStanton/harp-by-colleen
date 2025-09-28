@@ -244,6 +244,7 @@ export default function Navbar({ logoSrc }) {
         anchor="left"
         open={open}
         onClose={() => setOpen(false)}
+        ModalProps={{ disableScrollLock: true }}
         // style the *paper* so the entire drawer (not just the content box) gets the bg
         PaperProps={{
           sx: {
