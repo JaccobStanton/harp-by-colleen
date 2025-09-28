@@ -22,7 +22,6 @@ export default function Footer({
     },
   ],
   poweredBy = "Powered by Vite + React",
-  madeBy = "Made by Jake Stanton",
 }) {
   const rootRef = React.useRef(null);
   const [reveal, setReveal] = React.useState(false);
@@ -254,16 +253,21 @@ export default function Footer({
           >
             {poweredBy}
           </Typography>
-          <Typography
+          <MUILink
+            href="mailto:JaccobStanton@gmail.com?subject=Website%20Inquiry"
+            aria-label="Email Jake Stanton"
+            underline="always"
             sx={{
               color: "text.secondary",
               letterSpacing: ".24em",
               textTransform: "uppercase",
               fontSize: { xs: 10.5, sm: 11, md: 12 },
+              display: "inline-block",
+              "&:hover": { color: CORAL },
             }}
           >
-            {madeBy}
-          </Typography>
+            Made by Jake Stanton
+          </MUILink>
         </Box>
       </Container>
     </Box>
