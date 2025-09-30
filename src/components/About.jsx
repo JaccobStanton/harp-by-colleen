@@ -13,7 +13,7 @@ export default function About({
   image = { src: ABOUT, alt: "Smiling bride holding flowers" },
   eyebrow = "Who I am",
   title = "Classical Roots, Contemporary Reach",
-  copy = `Colleen is the principal harpist for the St. Louis Philharmonic and has performed with a wide array of esteemed ensembles including the St. Louis Symphony, Union Avenue Opera, Winter Opera, the St. Louis Bach Society, Metropolitan Orchestra of St. Louis, among many others. A versatile and in-demand performer, she has brought her artistry to over 100 wedding ceremonies and events`,
+  copy = `Colleen was the principal harpist for the St. Louis Philharmonic and has performed with a wide array of esteemed ensembles including the St. Louis Symphony, Union Avenue Opera, Winter Opera, the St. Louis Bach Society, Metropolitan Orchestra of St. Louis, among many others. A versatile and in-demand performer, she has brought her artistry to over 100 wedding ceremonies and events`,
   cta = { label: "More about me", href: "#aboutme" },
   leafSrc = LeafSrc,
 }) {
