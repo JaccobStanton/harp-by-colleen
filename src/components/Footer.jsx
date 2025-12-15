@@ -21,7 +21,7 @@ export default function Footer({
       href: "https://www.theknot.com/marketplace/wedding-reception-venues-st-louis-mo/affordable?utm_source=google&utm_medium=cpc&utm_campaign=MARKETPLACE_EVERGREEN&utm_content=performance_cpc_search-ad_pmax_venue&gad_source=1&gad_campaignid=22997580416&gbraid=0AAAAADiu8TnFBMnyhDRDl9VAbOdEWYPey&gclid=CjwKCAjwlt7GBhAvEiwAKal0csXlbJLRb-nySf37LEOFYHeMrNCaHKbRtgtW2xIwIsZAcrpnPDVffBoCwO8QAvD_BwE",
     },
   ],
-  poweredBy = "Powered by Vite + React",
+  poweredBy = "Made by",
 }) {
   const rootRef = React.useRef(null);
   const [reveal, setReveal] = React.useState(false);
@@ -266,7 +266,7 @@ export default function Footer({
               "&:hover": { color: CORAL },
             }}
           >
-            Made by Jake Stanton
+            Stanton Studios - Web Design
           </MUILink>
         </Box>
       </Container>
