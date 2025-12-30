@@ -4,7 +4,7 @@ import { Box, Container, Typography, IconButton } from "@mui/material";
 import { PlayArrowRounded, PauseRounded } from "@mui/icons-material";
 import LeafImg from "../assets/leaf.png";
 
-import TRACK1 from "../assets/recordings/Arabesque_Debussy.mp3";
+import TRACK1 from "../assets/recordings/Concerning_Hobbits.mp3";
 import TRACK2 from "../assets/recordings/Ave_Maria.mp3";
 import TRACK3 from "../assets/recordings/Can't_Help_Falling_in_Love_Elvis.mp3";
 import TRACK4 from "../assets/recordings/Here_Comes_the_Sun_The_Beatles.mp3";
@@ -22,8 +22,8 @@ export default function Portfolio({
   title = "Curated Selections for Clients & Events",
   blurb = `A selection of harp recordings, handpicked for their timeless appeal and emotional resonance. Perfect for setting the mood at your next event or simply enjoying a moment of tranquility.`,
   items = [
-    { title: "Arabesque – Debussy", src: TRACK1 },
-    { title: "Ave Marie", src: TRACK2 },
+    { title: "Concerning Hobbits", src: TRACK1 },
+    { title: "Ave Maria", src: TRACK2 },
     { title: "Can't Help Falling Inlove With You – Elvis", src: TRACK3 },
     { title: "Here Comes The Sun – The Beatles", src: TRACK4 },
     { title: "Largo From The New World - Dvorak", src: TRACK5 },
